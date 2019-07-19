@@ -1,15 +1,13 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.version.compileSdkVersion
 
     defaultConfig {
-        applicationId "ysn.com.multidrawable"
         minSdkVersion  rootProject.ext.version.minSdkVersion
         targetSdkVersion rootProject.ext.version.targetSdkVersion
         versionCode rootProject.ext.version.versionCode
         versionName  rootProject.ext.version.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -19,19 +17,10 @@ android {
         }
     }
 
-    compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation rootProject.ext.supportLibs
-
-    implementation project(":drawable")
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
