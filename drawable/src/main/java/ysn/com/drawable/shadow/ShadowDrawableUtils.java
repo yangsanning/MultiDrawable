@@ -19,6 +19,7 @@ public class ShadowDrawableUtils {
 
     public static void setBackground(View view, Drawable drawable) {
         ViewCompat.setBackground(view, drawable);
+        // setShadowLayer只有文字绘制阴影支持硬件加速，其它都不支持硬件加速,故这里要关闭硬件加速
         ViewCompat.setLayerType(view, ViewCompat.LAYER_TYPE_SOFTWARE, null);
     }
 }

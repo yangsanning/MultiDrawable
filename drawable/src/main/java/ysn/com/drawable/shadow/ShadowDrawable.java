@@ -51,7 +51,13 @@ public class ShadowDrawable extends Drawable {
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(attrs.getBackgroundColor());
 
-        // 设置阴影
+        /*
+          设置阴影
+          第一个参数为模糊半径，越大越模糊（如果模糊半径为0是看不到阴影效果的）
+          第二个参数是阴影离开文字的x横向距离
+          第三个参数是阴影离开文字的Y横向距离
+          第四个参数是阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
+         */
         paint.setShadowLayer(attrs.getRadius(), attrs.getOffsetX(), attrs.getOffsetY(), attrs.getShadowColor());
 
         drawRect = new RectF();

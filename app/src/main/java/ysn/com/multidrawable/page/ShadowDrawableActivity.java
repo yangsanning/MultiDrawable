@@ -25,7 +25,8 @@ public class ShadowDrawableActivity extends AppCompatActivity {
         setTitle(R.string.text_shadow_drawable);
 
         ShadowAttribute attrs = new ShadowAttribute()
-                .setShadowColor(0x80FF0000)
+                // 阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
+                .setShadowColor(getResources().getColor(R.color.valid_color))
                 .setRadius(15)
                 .setBackgroundColor(Color.TRANSPARENT)
                 .setShadowType(ShadowType.LEFT, ShadowType.TOP, ShadowType.RIGHT);

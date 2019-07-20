@@ -10,7 +10,7 @@ package ysn.com.drawable.shadow;
 public class ShadowAttribute {
 
     /**
-     * shadowColor: 阴影颜色
+     * shadowColor: 阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
      * backgroundColor: 背景颜色
      */
     private int shadowColor;
@@ -42,6 +42,9 @@ public class ShadowAttribute {
         return shadowColor;
     }
 
+    /**
+     * @param shadowColor 阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
+     */
     public ShadowAttribute setShadowColor(int shadowColor) {
         this.shadowColor = shadowColor;
         return this;
