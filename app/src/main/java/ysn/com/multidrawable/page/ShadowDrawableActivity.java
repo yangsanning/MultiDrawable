@@ -27,34 +27,34 @@ public class ShadowDrawableActivity extends AppCompatActivity {
         ShadowAttribute attrs = new ShadowAttribute()
                 // 阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
                 .setShadowColor(getResources().getColor(R.color.valid_color))
-                .setRadius(15)
+                .setRadius(20)
                 .setBackgroundColor(Color.TRANSPARENT)
                 .setShadowType(ShadowType.LEFT, ShadowType.TOP, ShadowType.RIGHT);
         ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_layout), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
-                .setRadius(10)
-                .setOvalX(50f)
-                .setOvalY(10f)
+                .setRadius(15)
+                .setOvalX(100f)
+                .setOvalY(20f)
                 .setShadowType(ShadowType.NONE);
         ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_image_view), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
-                .setRadius(5)
+                .setRadius(10)
                 .setShadowType(ShadowType.LEFT, ShadowType.RIGHT);
         ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text1), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
-                .setRadius(5)
+                .setRadius(10)
                 .setShadowType(ShadowType.LEFT, ShadowType.TOP);
         ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text2), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
-                .setRadius(5)
+                .setRadius(10)
                 .setShadowType(ShadowType.RIGHT, ShadowType.BOTTOM);
         ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text3), attrs);
     }

@@ -29,33 +29,33 @@
             <TextView
                 android:id="@+id/shadow_drawable_activity_text1"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:padding="10dp"
+                android:padding="15dp"
                 android:text="左右"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/shadow_drawable_activity_text2"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:padding="10dp"
+                android:padding="15dp"
                 android:text="左上"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/shadow_drawable_activity_text3"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:padding="10dp"
+                android:padding="15dp"
                 android:text="右下"
                 android:textSize="18sp" />
         </LinearLayout>
