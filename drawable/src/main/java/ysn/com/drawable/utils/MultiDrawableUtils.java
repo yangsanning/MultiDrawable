@@ -1,4 +1,4 @@
-package ysn.com.drawable.shadow;
+package ysn.com.drawable.utils;
 
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewCompat;
@@ -6,6 +6,8 @@ import android.view.View;
 
 import ysn.com.drawable.border.BorderDrawable;
 import ysn.com.drawable.border.BorderDrawableBuilder;
+import ysn.com.drawable.shadow.ShadowDrawableBuilder;
+import ysn.com.drawable.shadow.ShadowDrawable;
 
 /**
  * @Author yangsanning
@@ -16,7 +18,7 @@ import ysn.com.drawable.border.BorderDrawableBuilder;
  */
 public class MultiDrawableUtils {
 
-    public static void setBackground(View view, ShadowAttribute attrs) {
+    public static void setBackground(View view, ShadowDrawableBuilder attrs) {
         setBackground(view, new ShadowDrawable(attrs));
     }
 

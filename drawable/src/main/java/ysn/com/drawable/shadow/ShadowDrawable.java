@@ -19,7 +19,7 @@ import android.graphics.drawable.Drawable;
  */
 public class ShadowDrawable extends Drawable {
 
-    private ShadowAttribute attrs;
+    private ShadowDrawableBuilder attrs;
 
     private Paint paint;
     private RectF drawRect;
@@ -33,7 +33,7 @@ public class ShadowDrawable extends Drawable {
         this(null);
     }
 
-    public ShadowDrawable(ShadowAttribute attrs) {
+    public ShadowDrawable(ShadowDrawableBuilder attrs) {
         if (attrs == null) {
             throw new NullPointerException("You have to create attributes!");
         }

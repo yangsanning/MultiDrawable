@@ -1,16 +1,16 @@
 package ysn.com.drawable.border;
 
-import android.view.View;
+import android.graphics.drawable.Drawable;
 
-import ysn.com.drawable.shadow.MultiDrawableUtils;
+import ysn.com.drawable.base.BaseDrawableBuilder;
 
 /**
  * @Author yangsanning
  * @ClassName BorderDrawableBuilder
- * @Description 边框Drawable
+ * @Description 阴影Drawable
  * @Date 2020/9/7
  */
-public class BorderDrawableBuilder {
+public class BorderDrawableBuilder extends BaseDrawableBuilder {
 
     /**
      * backgroundColor: 背景颜色
@@ -81,17 +81,8 @@ public class BorderDrawableBuilder {
     /**
      * 创建 {@link BorderDrawable}
      */
-    public BorderDrawable create() {
+    @Override
+    public Drawable create() {
         return new BorderDrawable(this);
-    }
-
-    /**
-     * 直接设置背景
-     */
-    public void into(View... views) {
-        BorderDrawable borderDrawable = create();
-        for (View view : views) {
-            MultiDrawableUtils.setBackground(view, borderDrawable);
-        }
     }
 }

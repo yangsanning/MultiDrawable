@@ -1,13 +1,17 @@
 package ysn.com.drawable.shadow;
 
+import android.graphics.drawable.Drawable;
+
+import ysn.com.drawable.base.BaseDrawableBuilder;
+
 /**
  * @Author yangsanning
- * @ClassName ShadowAttribute
- * @Description ShadowDrawable的属性
+ * @ClassName ShadowDrawableBuilder
+ * @Description ShadowDrawable
  * @Date 2019/7/16
  * @History 2019/7/16 author: description:
  */
-public class ShadowAttribute {
+public class ShadowDrawableBuilder extends BaseDrawableBuilder {
 
     /**
      * shadowColor: 阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
@@ -45,7 +49,7 @@ public class ShadowAttribute {
     /**
      * @param shadowColor 阴影颜色（ALPHA_8只记录颜色的alpha值, 故使用xml颜色值时加上alpha, 否则无效）
      */
-    public ShadowAttribute setShadowColor(int shadowColor) {
+    public ShadowDrawableBuilder setShadowColor(int shadowColor) {
         this.shadowColor = shadowColor;
         return this;
     }
@@ -54,7 +58,7 @@ public class ShadowAttribute {
         return backgroundColor;
     }
 
-    public ShadowAttribute setBackgroundColor(int backgroundColor) {
+    public ShadowDrawableBuilder setBackgroundColor(int backgroundColor) {
         this.backgroundColor = backgroundColor;
         return this;
     }
@@ -63,7 +67,7 @@ public class ShadowAttribute {
         return radius;
     }
 
-    public ShadowAttribute setRadius(int radius) {
+    public ShadowDrawableBuilder setRadius(int radius) {
         this.radius = radius;
         return this;
     }
@@ -80,7 +84,7 @@ public class ShadowAttribute {
         return offsetX;
     }
 
-    public ShadowAttribute setOffsetX(int offsetX) {
+    public ShadowDrawableBuilder setOffsetX(int offsetX) {
         this.offsetX = offsetX;
         return this;
     }
@@ -89,7 +93,7 @@ public class ShadowAttribute {
         return offsetY;
     }
 
-    public ShadowAttribute setOffsetY(int offsetY) {
+    public ShadowDrawableBuilder setOffsetY(int offsetY) {
         this.offsetY = offsetY;
         return this;
     }
@@ -98,7 +102,7 @@ public class ShadowAttribute {
         return ovalX;
     }
 
-    public ShadowAttribute setOvalX(float ovalX) {
+    public ShadowDrawableBuilder setOvalX(float ovalX) {
         this.ovalX = ovalX;
         return this;
     }
@@ -107,7 +111,7 @@ public class ShadowAttribute {
         return ovalY;
     }
 
-    public ShadowAttribute setOvalY(float ovalY) {
+    public ShadowDrawableBuilder setOvalY(float ovalY) {
         this.ovalY = ovalY;
         return this;
     }
@@ -120,8 +124,13 @@ public class ShadowAttribute {
         this.shadowTypes = shadowTypes;
     }
 
-    public ShadowAttribute setShadowType(@ShadowType int... shadowTypes) {
+    public ShadowDrawableBuilder setShadowType(@ShadowType int... shadowTypes) {
         this.shadowTypes = shadowTypes;
         return this;
+    }
+
+    @Override
+    public Drawable create() {
+        return new ShadowDrawable(this);
     }
 }
