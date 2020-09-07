@@ -5,14 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import ysn.com.drawable.shadow.ShadowAttribute;
-import ysn.com.drawable.shadow.ShadowDrawableUtils;
+import ysn.com.drawable.shadow.MultiDrawableUtils;
 import ysn.com.drawable.shadow.ShadowType;
 import ysn.com.multidrawable.R;
 
 /**
  * @Author yangsanning
  * @ClassName ShadowDrawableActivity
- * @Description 一句话概括作用
+ * @Description 阴影 Drawable
  * @Date 2019/7/19
  * @History 2019/7/19 author: description:
  */
@@ -30,7 +30,7 @@ public class ShadowDrawableActivity extends AppCompatActivity {
                 .setRadius(20)
                 .setBackgroundColor(Color.TRANSPARENT)
                 .setShadowType(ShadowType.LEFT, ShadowType.TOP, ShadowType.RIGHT);
-        ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_layout), attrs);
+        MultiDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_layout), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
@@ -38,24 +38,24 @@ public class ShadowDrawableActivity extends AppCompatActivity {
                 .setOvalX(100f)
                 .setOvalY(20f)
                 .setShadowType(ShadowType.NONE);
-        ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_image_view), attrs);
+        MultiDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_image_view), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
                 .setRadius(10)
                 .setShadowType(ShadowType.LEFT, ShadowType.RIGHT);
-        ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text1), attrs);
+        MultiDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text1), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
                 .setRadius(10)
                 .setShadowType(ShadowType.LEFT, ShadowType.TOP);
-        ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text2), attrs);
+        MultiDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text2), attrs);
 
         attrs = new ShadowAttribute()
                 .setShadowColor(0x800000FF)
                 .setRadius(10)
                 .setShadowType(ShadowType.RIGHT, ShadowType.BOTTOM);
-        ShadowDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text3), attrs);
+        MultiDrawableUtils.setBackground(findViewById(R.id.shadow_drawable_activity_text3), attrs);
     }
 }

@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
 
+import ysn.com.multidrawable.page.BorderDrawableActivity;
 import ysn.com.multidrawable.page.ShadowDrawableActivity;
 
 /**
@@ -21,7 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.main_activity_shadow_drawable).setOnClickListener(this);
+        LinearLayout rootLayout = findViewById(R.id.main_activity_root);
+        int childCount = rootLayout.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            rootLayout.getChildAt(i).setOnClickListener(this);
+        }
     }
 
 
@@ -29,10 +35,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_activity_shadow_drawable:
-                startActivity(new Intent(this, ShadowDrawableActivity.class));
+                startActivity(ShadowDrawableActivity.class);
+                break;
+            case R.id.main_activity_border_drawable:
+                startActivity(BorderDrawableActivity.class);
                 break;
             default:
                 break;
         }
+    }
+
+    private void startActivity(Class<?> cls) {
+        startActivity(new Intent(this, cls));
     }
 }

@@ -18,5 +18,6 @@
         </activity>
 
         <activity android:name=".page.ShadowDrawableActivity"/>
+        <activity android:name=".page.BorderDrawableActivity"/>
     </application>
 </manifest>

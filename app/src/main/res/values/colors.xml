@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="valid_color">#90ff0000</color>
+
+    <color name="app_storke">#AAAAAA</color>
+    <color name="app_background">#F5F5F5</color>
 </resources>

@@ -25,7 +25,7 @@ public class ShadowDrawable extends Drawable {
     private RectF drawRect;
 
     /**
-     * 绘制不相交区域
+     * 只在源图像和目标图像不相交的地方绘制源图像
      */
     private PorterDuffXfermode srcOut = new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT);
 
@@ -100,13 +100,12 @@ public class ShadowDrawable extends Drawable {
         }
     }
 
-
     @Override
     public void draw(Canvas canvas) {
         paint.setXfermode(null);
         canvas.drawRoundRect(drawRect, attrs.getOvalX(), attrs.getOvalY(), paint);
 
-        // 设置图像混合模式, 此处用SRC_OUT, 绘制不相交区域
+        // 设置图像混合模式, 只在源图像和目标图像不相交的地方绘制源图像
         paint.setXfermode(srcOut);
         canvas.drawRoundRect(drawRect, attrs.getOvalX(), attrs.getOvalY(), paint);
     }

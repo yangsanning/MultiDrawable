@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MultiDrawable</string>
     <string name="text_shadow_drawable">Shadow Drawable</string>
+    <string name="text_border_drawable">Border Drawable</string>
 </resources>
