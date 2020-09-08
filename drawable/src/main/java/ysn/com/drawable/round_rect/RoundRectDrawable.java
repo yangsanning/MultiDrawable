@@ -62,10 +62,10 @@ public class RoundRectDrawable extends Drawable {
     protected void onBoundsChange(Rect bounds) {
         super.onBoundsChange(bounds);
         if (bounds.right - bounds.left > 0 && bounds.bottom - bounds.top > 0) {
-            strokeDrawRect.left = 0;
-            strokeDrawRect.top = 0;
-            strokeDrawRect.right = (bounds.right - bounds.left);
-            strokeDrawRect.bottom = (bounds.bottom - bounds.top);
+            strokeDrawRect.left = 0 + builder.getMarginLeft();
+            strokeDrawRect.top = 0 + builder.getMarginTop();
+            strokeDrawRect.right = (bounds.right - bounds.left) - builder.getMarginRight();
+            strokeDrawRect.bottom = (bounds.bottom - bounds.top) - builder.getMarginBottom();
 
             backgroundDrawRect.left = strokeDrawRect.left + builder.getStrokeWidth();
             backgroundDrawRect.top = strokeDrawRect.top + builder.getStrokeWidth();

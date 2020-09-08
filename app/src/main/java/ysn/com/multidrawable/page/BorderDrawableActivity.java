@@ -30,14 +30,22 @@ public class BorderDrawableActivity extends AppCompatActivity {
 
         new RoundRectDrawableBuilder()
                 .setBackgroundColor(Color.WHITE)
+                .setStrokeColor(getResources().getColor(R.color.app_storke))
+                .setStrokeWidth(2)
                 .setRadius(30, 30, 30, 30)
+                .setMargin(15,15,15,15)
                 .into(findViewById(R.id.border_drawable_activity_text2));
+
+        new RoundRectDrawableBuilder()
+                .setBackgroundColor(Color.WHITE)
+                .setRadius(40, 40, 40, 40)
+                .into(findViewById(R.id.border_drawable_activity_text3));
 
         new RoundRectDrawableBuilder()
                 .setBackgroundColor(Color.WHITE)
                 .setStrokeColor(getResources().getColor(R.color.valid_color))
                 .setStrokeWidth(2)
                 .setRadius(30, 60, 90, 120)
-                .into(findViewById(R.id.border_drawable_activity_text3));
+                .into(findViewById(R.id.border_drawable_activity_text4));
     }
 }

@@ -33,6 +33,12 @@ public class RoundRectDrawableBuilder extends BaseDrawableBuilder {
      */
     private float[] radiusArray = {0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f};
 
+    /**
+     * 边距
+     * left, top,  right, bottom
+     */
+    private float[] marginArray = {0f, 0f, 0f, 0f};
+
     public int getBackgroundColor() {
         return backgroundColor;
     }
@@ -117,6 +123,73 @@ public class RoundRectDrawableBuilder extends BaseDrawableBuilder {
         radiusArray[6] = leftBottom;
         radiusArray[7] = leftBottom;
         return this;
+    }
+
+    public void setMarginArray(float[] marginArray) {
+        this.marginArray = marginArray;
+    }
+
+    public float[] getMarginArray() {
+        return marginArray;
+    }
+
+    /**
+     * 设置边距
+     */
+    public RoundRectDrawableBuilder setMargin(float left, float top, float right, float bottom) {
+        marginArray[0] = left;
+        marginArray[1] = top;
+        marginArray[2] = right;
+        marginArray[3] = bottom;
+        return this;
+    }
+
+    /**
+     * 设置左边距
+     */
+    public RoundRectDrawableBuilder setMarginLeft(float left) {
+        marginArray[0] = left;
+        return this;
+    }
+
+    public float getMarginLeft() {
+        return marginArray[0];
+    }
+
+    /**
+     * 设置上边距
+     */
+    public RoundRectDrawableBuilder setMarginTop(float top) {
+        marginArray[1] = top;
+        return this;
+    }
+
+    public float getMarginTop() {
+        return marginArray[1];
+    }
+
+    /**
+     * 设置右边距
+     */
+    public RoundRectDrawableBuilder setMarginRight(float right) {
+        marginArray[2] = right;
+        return this;
+    }
+
+    public float getMarginRight() {
+        return marginArray[2];
+    }
+
+    /**
+     * 设置下边距
+     */
+    public RoundRectDrawableBuilder setMarginBottom(float bottom) {
+        marginArray[3] = bottom;
+        return this;
+    }
+
+    public float getMarginBottom() {
+        return marginArray[3];
     }
 
     /**
