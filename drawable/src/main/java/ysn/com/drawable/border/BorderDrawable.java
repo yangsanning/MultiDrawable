@@ -3,6 +3,7 @@ package ysn.com.drawable.border;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -18,9 +19,10 @@ import android.graphics.drawable.Drawable;
  */
 public class BorderDrawable extends Drawable {
 
-    private BorderDrawableBuilder attrs;
+    private BorderDrawableBuilder builder;
 
     private Paint paint;
+    private Path path;
     private RectF backgroundDrawRect;
     private RectF strokeDrawRect;
 
@@ -33,11 +35,11 @@ public class BorderDrawable extends Drawable {
         this(null);
     }
 
-    public BorderDrawable(BorderDrawableBuilder attrs) {
-        if (attrs == null) {
-            throw new NullPointerException("You have to create attributes!");
+    public BorderDrawable(BorderDrawableBuilder builder) {
+        if (builder == null) {
+            throw new NullPointerException("You have to create builder!");
         }
-        this.attrs = attrs;
+        this.builder = builder;
         initPaint();
     }
 
@@ -49,6 +51,8 @@ public class BorderDrawable extends Drawable {
         paint.setFilterBitmap(true);
         paint.setDither(true);
         paint.setStyle(Paint.Style.FILL);
+
+        path = new Path();
 
         backgroundDrawRect = new RectF();
         strokeDrawRect = new RectF();
@@ -63,10 +67,10 @@ public class BorderDrawable extends Drawable {
             strokeDrawRect.right = (bounds.right - bounds.left);
             strokeDrawRect.bottom = (bounds.bottom - bounds.top);
 
-            backgroundDrawRect.left = strokeDrawRect.left + attrs.getStrokeWidth();
-            backgroundDrawRect.top = strokeDrawRect.top + attrs.getStrokeWidth();
-            backgroundDrawRect.right = strokeDrawRect.right - attrs.getStrokeWidth();
-            backgroundDrawRect.bottom = strokeDrawRect.bottom - attrs.getStrokeWidth();
+            backgroundDrawRect.left = strokeDrawRect.left + builder.getStrokeWidth();
+            backgroundDrawRect.top = strokeDrawRect.top + builder.getStrokeWidth();
+            backgroundDrawRect.right = strokeDrawRect.right - builder.getStrokeWidth();
+            backgroundDrawRect.bottom = strokeDrawRect.bottom - builder.getStrokeWidth();
 
             // 调用实现了Drawable.Callback的invalidateDrawable(Drawable who)方法, 最终调用View的invalidate()
             invalidateSelf();
@@ -76,18 +80,20 @@ public class BorderDrawable extends Drawable {
     @Override
     public void draw(Canvas canvas) {
         paint.setXfermode(null);
-        paint.setColor(attrs.getStrokeColor());
-        canvas.drawRoundRect(strokeDrawRect, attrs.getOvalX(), attrs.getOvalY(), paint);
+        // 没有边框时不绘制边框
+        if (builder.getStrokeWidth() != 0) {
+            path.addRoundRect(strokeDrawRect, builder.getRadiusArray(), Path.Direction.CCW);
+            paint.setColor(builder.getStrokeColor());
+            canvas.drawPath(path, paint);
+            path.reset();
 
-        paint.setColor(attrs.getBackgroundColor());
-        // 设置图像混合模式, 在源图像和目标图像相交的地方绘制源图像，在不相交的地方绘制目标图像
-        paint.setXfermode(srcOut);
-        canvas.drawRoundRect(backgroundDrawRect, attrs.getOvalX(), attrs.getOvalY(), paint);
-    }
-
-    public BorderDrawable setColor(int color) {
-        paint.setColor(color);
-        return this;
+            // 设置图像混合模式, 在源图像和目标图像相交的地方绘制源图像，在不相交的地方绘制目标图像
+            paint.setXfermode(srcOut);
+        }
+        paint.setColor(builder.getBackgroundColor());
+        path.addRoundRect(backgroundDrawRect, builder.getRadiusArray(), Path.Direction.CCW);
+        canvas.drawPath(path, paint);
+        path.reset();
     }
 
     @Override

@@ -24,9 +24,20 @@ public class BorderDrawableActivity extends AppCompatActivity {
         new BorderDrawableBuilder()
                 .setBackgroundColor(Color.WHITE)
                 .setStrokeColor(getResources().getColor(R.color.app_storke))
-                .setOvalX(8)
-                .setOvalY(8)
                 .setStrokeWidth(2)
+                .setRadius(30, 30, 30, 30)
                 .into(findViewById(R.id.border_drawable_activity_text1));
+
+        new BorderDrawableBuilder()
+                .setBackgroundColor(Color.WHITE)
+                .setRadius(30, 30, 30, 30)
+                .into(findViewById(R.id.border_drawable_activity_text2));
+
+        new BorderDrawableBuilder()
+                .setBackgroundColor(Color.WHITE)
+                .setStrokeColor(getResources().getColor(R.color.valid_color))
+                .setStrokeWidth(2)
+                .setRadius(30, 60, 90, 120)
+                .into(findViewById(R.id.border_drawable_activity_text3));
     }
 }

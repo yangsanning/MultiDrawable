@@ -24,7 +24,29 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:padding="15dp"
-                android:text="圆角边框"
+                android:text="圆角矩形带边框"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/border_drawable_activity_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="圆角矩形不带边框"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/border_drawable_activity_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="圆角矩形自定义角度"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>

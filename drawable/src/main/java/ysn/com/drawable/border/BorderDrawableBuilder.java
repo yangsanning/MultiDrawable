@@ -28,10 +28,10 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
     private int strokeWidth;
 
     /**
-     * 椭圆X轴以及y轴半径
+     * 圆角半径
+     * leftTop, leftTop, rightTop,, rightTop,  rightBottom,  rightBottom,  leftBottom,  leftBottom
      */
-    private float ovalX;
-    private float ovalY;
+    private float[] radiusArray = {0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f};
 
     public int getBackgroundColor() {
         return backgroundColor;
@@ -60,21 +60,62 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
         return this;
     }
 
-    public float getOvalX() {
-        return ovalX;
+    public void setRadiusArray(float[] radiusArray) {
+        this.radiusArray = radiusArray;
     }
 
-    public BorderDrawableBuilder setOvalX(float ovalX) {
-        this.ovalX = ovalX;
+    public float[] getRadiusArray() {
+        return radiusArray;
+    }
+
+    /**
+     * 设置四个角的圆角半径
+     */
+    public BorderDrawableBuilder setRadius(float leftTop, float rightTop, float rightBottom, float leftBottom) {
+        radiusArray[0] = leftTop;
+        radiusArray[1] = leftTop;
+        radiusArray[2] = rightTop;
+        radiusArray[3] = rightTop;
+        radiusArray[4] = rightBottom;
+        radiusArray[5] = rightBottom;
+        radiusArray[6] = leftBottom;
+        radiusArray[7] = leftBottom;
         return this;
     }
 
-    public float getOvalY() {
-        return ovalY;
+    /**
+     * 设置左上角的圆角半径
+     */
+    public BorderDrawableBuilder setLeftTopRadius(float leftTop) {
+        radiusArray[0] = leftTop;
+        radiusArray[1] = leftTop;
+        return this;
     }
 
-    public BorderDrawableBuilder setOvalY(float ovalY) {
-        this.ovalY = ovalY;
+    /**
+     * 设置右上角的圆角半径
+     */
+    public BorderDrawableBuilder setRightTopRadius(float rightTop) {
+        radiusArray[2] = rightTop;
+        radiusArray[3] = rightTop;
+        return this;
+    }
+
+    /**
+     * 设置右下角的圆角半径
+     */
+    public BorderDrawableBuilder setRightBottomRadius(float rightBottom) {
+        radiusArray[4] = rightBottom;
+        radiusArray[5] = rightBottom;
+        return this;
+    }
+
+    /**
+     * 设置左下角的圆角半径
+     */
+    public BorderDrawableBuilder setLeftBottomRadius(float leftBottom) {
+        radiusArray[6] = leftBottom;
+        radiusArray[7] = leftBottom;
         return this;
     }
 
