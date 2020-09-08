@@ -1,7 +1,7 @@
 # ShadowDrawable
 
 ## 效果预览
-<img src="images/ShadowDrawable.png" height="512"/>
+<img src="https://github.com/yangsanning/MultiDrawable/blob/master/images/ShadowDrawable.png" height="512"/>
 
 ## 主要文件
 | 名字             | 摘要           |
