@@ -4,8 +4,8 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewCompat;
 import android.view.View;
 
-import ysn.com.drawable.border.BorderDrawable;
-import ysn.com.drawable.border.BorderDrawableBuilder;
+import ysn.com.drawable.round_rect.RoundRectDrawable;
+import ysn.com.drawable.round_rect.RoundRectDrawableBuilder;
 import ysn.com.drawable.shadow.ShadowDrawableBuilder;
 import ysn.com.drawable.shadow.ShadowDrawable;
 
@@ -22,8 +22,8 @@ public class MultiDrawableUtils {
         setBackground(view, new ShadowDrawable(attrs));
     }
 
-    public static void setBackground(View view, BorderDrawableBuilder attrs) {
-        setBackground(view, new BorderDrawable(attrs));
+    public static void setBackground(View view, RoundRectDrawableBuilder attrs) {
+        setBackground(view, new RoundRectDrawable(attrs));
     }
 
     /**

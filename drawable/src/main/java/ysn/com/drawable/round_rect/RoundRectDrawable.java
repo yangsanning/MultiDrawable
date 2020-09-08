@@ -1,4 +1,4 @@
-package ysn.com.drawable.border;
+package ysn.com.drawable.round_rect;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -13,13 +13,13 @@ import android.graphics.drawable.Drawable;
 
 /**
  * @Author yangsanning
- * @ClassName BorderDrawable
- * @Description 边框 Drawable
+ * @ClassName RoundRectDrawable
+ * @Description 圆角矩形 Drawable
  * @Date 2020/9/7
  */
-public class BorderDrawable extends Drawable {
+public class RoundRectDrawable extends Drawable {
 
-    private BorderDrawableBuilder builder;
+    private RoundRectDrawableBuilder builder;
 
     private Paint paint;
     private Path path;
@@ -31,11 +31,11 @@ public class BorderDrawable extends Drawable {
      */
     private PorterDuffXfermode srcOut = new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP);
 
-    public BorderDrawable() {
+    public RoundRectDrawable() {
         this(null);
     }
 
-    public BorderDrawable(BorderDrawableBuilder builder) {
+    public RoundRectDrawable(RoundRectDrawableBuilder builder) {
         if (builder == null) {
             throw new NullPointerException("You have to create builder!");
         }

@@ -1,4 +1,4 @@
-package ysn.com.drawable.border;
+package ysn.com.drawable.round_rect;
 
 import android.graphics.drawable.Drawable;
 
@@ -6,11 +6,11 @@ import ysn.com.drawable.base.BaseDrawableBuilder;
 
 /**
  * @Author yangsanning
- * @ClassName BorderDrawableBuilder
- * @Description 阴影Drawable
+ * @ClassName RoundRectDrawableBuilder
+ * @Description 圆角矩形 DrawableBuilder
  * @Date 2020/9/7
  */
-public class BorderDrawableBuilder extends BaseDrawableBuilder {
+public class RoundRectDrawableBuilder extends BaseDrawableBuilder {
 
     /**
      * backgroundColor: 背景颜色
@@ -37,7 +37,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
         return backgroundColor;
     }
 
-    public BorderDrawableBuilder setBackgroundColor(int backgroundColor) {
+    public RoundRectDrawableBuilder setBackgroundColor(int backgroundColor) {
         this.backgroundColor = backgroundColor;
         return this;
     }
@@ -46,7 +46,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
         return strokeColor;
     }
 
-    public BorderDrawableBuilder setStrokeColor(int strokeColor) {
+    public RoundRectDrawableBuilder setStrokeColor(int strokeColor) {
         this.strokeColor = strokeColor;
         return this;
     }
@@ -55,7 +55,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
         return strokeWidth;
     }
 
-    public BorderDrawableBuilder setStrokeWidth(int strokeWidth) {
+    public RoundRectDrawableBuilder setStrokeWidth(int strokeWidth) {
         this.strokeWidth = strokeWidth;
         return this;
     }
@@ -71,7 +71,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
     /**
      * 设置四个角的圆角半径
      */
-    public BorderDrawableBuilder setRadius(float leftTop, float rightTop, float rightBottom, float leftBottom) {
+    public RoundRectDrawableBuilder setRadius(float leftTop, float rightTop, float rightBottom, float leftBottom) {
         radiusArray[0] = leftTop;
         radiusArray[1] = leftTop;
         radiusArray[2] = rightTop;
@@ -86,7 +86,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
     /**
      * 设置左上角的圆角半径
      */
-    public BorderDrawableBuilder setLeftTopRadius(float leftTop) {
+    public RoundRectDrawableBuilder setLeftTopRadius(float leftTop) {
         radiusArray[0] = leftTop;
         radiusArray[1] = leftTop;
         return this;
@@ -95,7 +95,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
     /**
      * 设置右上角的圆角半径
      */
-    public BorderDrawableBuilder setRightTopRadius(float rightTop) {
+    public RoundRectDrawableBuilder setRightTopRadius(float rightTop) {
         radiusArray[2] = rightTop;
         radiusArray[3] = rightTop;
         return this;
@@ -104,7 +104,7 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
     /**
      * 设置右下角的圆角半径
      */
-    public BorderDrawableBuilder setRightBottomRadius(float rightBottom) {
+    public RoundRectDrawableBuilder setRightBottomRadius(float rightBottom) {
         radiusArray[4] = rightBottom;
         radiusArray[5] = rightBottom;
         return this;
@@ -113,17 +113,17 @@ public class BorderDrawableBuilder extends BaseDrawableBuilder {
     /**
      * 设置左下角的圆角半径
      */
-    public BorderDrawableBuilder setLeftBottomRadius(float leftBottom) {
+    public RoundRectDrawableBuilder setLeftBottomRadius(float leftBottom) {
         radiusArray[6] = leftBottom;
         radiusArray[7] = leftBottom;
         return this;
     }
 
     /**
-     * 创建 {@link BorderDrawable}
+     * 创建 {@link RoundRectDrawable}
      */
     @Override
     public Drawable create() {
-        return new BorderDrawable(this);
+        return new RoundRectDrawable(this);
     }
 }
