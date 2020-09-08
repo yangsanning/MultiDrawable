@@ -7,7 +7,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/border_drawable_activity_layout"
+            android:id="@+id/round_rect_drawable_activity_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -17,7 +17,7 @@
             android:paddingEnd="20dp">
 
             <TextView
-                android:id="@+id/border_drawable_activity_text1"
+                android:id="@+id/round_rect_drawable_activity_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -28,7 +28,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/border_drawable_activity_text2"
+                android:id="@+id/round_rect_drawable_activity_text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -39,7 +39,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/border_drawable_activity_text3"
+                android:id="@+id/round_rect_drawable_activity_text3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -50,7 +50,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/border_drawable_activity_text4"
+                android:id="@+id/round_rect_drawable_activity_text4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

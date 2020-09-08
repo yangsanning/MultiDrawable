@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import ysn.com.multidrawable.page.BorderDrawableActivity;
+import ysn.com.multidrawable.page.RoundRectDrawableActivity;
 import ysn.com.multidrawable.page.ShadowDrawableActivity;
 
 /**
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(ShadowDrawableActivity.class);
                 break;
             case R.id.main_activity_border_drawable:
-                startActivity(BorderDrawableActivity.class);
+                startActivity(RoundRectDrawableActivity.class);
                 break;
             default:
                 break;
