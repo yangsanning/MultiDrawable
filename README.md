@@ -4,15 +4,15 @@
 
 ## 效果预览
 
-| [ShadowDrawable]                      |
-| ------------------------------- |
-| [<img src="images/image1.png" height="512"/>][ShadowDrawable]   | |
-
+| [ShadowDrawable]                | [RoundRectDrawable]                |
+| ------------------------------- | ------------------------------- |
+| [<img src="https://github.com/yangsanning/MultiDrawable/blob/master/images/ShadowDrawable.png" height="512"/>][ShadowDrawable] | [<img src="https://github.com/yangsanning/MultiDrawable/blob/master/images/RoundRectDrawable.jpg" height="512"/>][RoundRectDrawable] |
 
 ## 主要文件
 | 名字             | 摘要           |
 | ---------------- | -------------- |
 |[ShadowDrawable]   | 阴影Drawable  |
+|[RoundRectDrawable]   | 圆角矩形Drawable  |
 
 ## 添加方法
 
@@ -40,4 +40,5 @@ implementation 'com.github.yangsanning:MultiDrawable:1.0.0'
 
 
 
-[ShadowDrawable]:https://github.com/yangsanning/MultiDrawable/blob/master/README_ShadowDrawable.md
+[ShadowDrawable]:https://github.com/yangsanning/MultiDrawable/blob/master/readmes/ShadowDrawable.md
+[RoundRectDrawable]:https://github.com/yangsanning/MultiDrawable/blob/master/readmes/RoundRectDrawable.md
