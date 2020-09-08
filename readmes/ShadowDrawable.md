@@ -1,7 +1,7 @@
 # ShadowDrawable
 
 ## 效果预览
-<img src="images/image1.png" height="512"/>
+<img src="images/ShadowDrawable.png" height="512"/>
 
 ## 主要文件
 | 名字             | 摘要           |
@@ -15,8 +15,8 @@ ShadowAttribute attrs = new ShadowAttribute()
                 .setShadowColor(getResources().getColor(R.color.valid_color))
                 .setRadius(20)
                 .setBackgroundColor(Color.TRANSPARENT)
-                .setShadowType(ShadowType.LEFT, ShadowType.TOP, ShadowType.RIGHT);
-ShadowDrawableUtils.setBackground(view, attrs);
+                .setShadowType(ShadowType.LEFT, ShadowType.TOP, ShadowType.RIGHT)
+                .into(view);
 ```
 
 ### 2. 方法([Method])
@@ -37,4 +37,4 @@ ShadowDrawableUtils.setBackground(view, attrs);
 3. 模糊半径为0是看不到阴影效果的
 
 
-[Method]:https://github.com/yangsanning/MultiDrawable/blob/master/drawable/src/main/java/ysn/com/drawable/shadow/ShadowAttribute.java
+[Method]:https://github.com/yangsanning/MultiDrawable/blob/master/drawable/src/main/java/ysn/com/drawable/shadow/ShadowDrawableBuilder.java
